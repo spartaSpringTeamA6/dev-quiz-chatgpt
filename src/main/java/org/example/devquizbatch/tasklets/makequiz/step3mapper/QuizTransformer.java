@@ -7,6 +7,7 @@ import org.example.devquizbatch.tasklets.makequiz.step2converter.QuizDtoFromResp
 
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 
 public class QuizTransformer {
@@ -31,12 +32,16 @@ public class QuizTransformer {
 
 	private static void addChoicesToQuiz(final Quiz quiz,
 		final List<QuizDtoFromResponse.Choice> choices) {
-		choices.stream()
-			.map(QuizTransformer::createQuizChoiceFromChoiceDto)
-			.forEach(quiz::addChoice);
+
+		IntStream.range(0, choices.size())
+				.forEach(index -> {
+					QuizChoice quizChoice = QuizTransformer.createQuizChoiceFromChoiceDto(index,choices.get(index));
+					quiz.addChoice(quizChoice);
+				});
 	}
 
 	private static QuizChoice createQuizChoiceFromChoiceDto(
+			int sequence,
 		final QuizDtoFromResponse.Choice choice) {
 		return QuizChoice.builder()
 			.choiceContent(choice.getContent())

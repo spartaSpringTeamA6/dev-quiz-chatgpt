@@ -34,6 +34,9 @@ public class QuizChoice {
 	@Column(nullable = false, name = "choice_content")
 	private String choiceContent;
 
+	@Column(nullable = false, name = "choice_sequence")
+	private int choiceSequence;
+
 	@Column(nullable = false, name = "is_answer")
 	private boolean isAnswer;
 

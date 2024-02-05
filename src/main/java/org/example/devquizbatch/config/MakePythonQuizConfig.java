@@ -2,6 +2,7 @@ package org.example.devquizbatch.config;
 
 import lombok.RequiredArgsConstructor;
 import org.example.devquizbatch.config.util.MakeQuizJobFlow;
+import org.example.devquizbatch.tasklets.makequiz.step1apirequest.ApiPythonRequestTasklet;
 import org.example.devquizbatch.tasklets.makequiz.step1apirequest.CategoryTitle;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;

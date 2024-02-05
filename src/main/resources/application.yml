@@ -4,7 +4,7 @@ spring:
   batch:
     job:
       enabled: false
-      names: saveQuizAtRDBMSJob, makeDataStructureQuizJob, makeDataBaseQuizJob, makeJavaQuizJob, makeSpringQuizJob, makeNetworkQuizJob, makeInterviewQuizJob
+      names: saveQuizAtRDBMSJob, makeCQuizJob, makeDataBaseQuizJob, makeJavaQuizJob, makeSpringQuizJob, makeNetworkQuizJob, makeComputerScienceQuizJob, makeDjangoQuizJob, makePythonQuizJob, makeJavaScriptQuizJob, makeJPAQuizJob, makeLinuxQuizJob, makeReactQuizJob
     jdbc:
       initialize-schema: always
   datasource:
@@ -17,13 +17,13 @@ spring:
 
   jpa:
     open-in-view: true
-    properties:
-      hibernate:
-        use_sql_comments: 'true'
-        format_sql: 'true'
-        show_sql: 'true'
+#    properties:
+#      hibernate:
+#        use_sql_comments: 'true'
+#        format_sql: 'ture'
+#        show_sql: 'true'
     hibernate:
-        ddl-auto: update
+        ddl-auto: none
 
 openai:
   model: ${OPENAI_MODEL}

@@ -17,7 +17,7 @@ configurations {
     }
 }
 ext {
-    set('springBatchVersion', '4.3.6') // Spring Batch 버전 설정
+    set('springBatchVersion', '4.3.6')
 }
 
 repositories {
@@ -36,7 +36,6 @@ dependencies {
 
     runtimeOnly 'com.mysql:mysql-connector-j'
 
-    // QueryDSL 의존성 적용
     implementation 'com.querydsl:querydsl-jpa'
     annotationProcessor "com.querydsl:querydsl-apt:${dependencyManagement.importedProperties['querydsl.version']}:jpa"
     annotationProcessor "jakarta.annotation:jakarta.annotation-api"
@@ -47,12 +46,12 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
 
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
-        exclude group: 'junit', module: 'junit' // JUnit 4 배제
+        exclude group: 'junit', module: 'junit'
     }
 
     testImplementation('org.springframework.batch:spring-batch-test') {
         version {
-            strictly "$springBatchVersion" // Spring Batch 테스트 버전 조정
+            strictly "$springBatchVersion"
         }
     }
 

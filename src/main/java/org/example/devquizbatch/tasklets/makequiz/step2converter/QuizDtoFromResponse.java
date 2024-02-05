@@ -13,6 +13,7 @@ import java.util.List;
 public class QuizDtoFromResponse {
 
 	private CategoryTitle categoryTitle;
+
 	private String id;
 
 	private String title;

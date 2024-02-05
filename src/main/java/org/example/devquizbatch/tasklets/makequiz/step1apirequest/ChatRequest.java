@@ -19,9 +19,6 @@ public class ChatRequest {
 
 	private float temperature;
 
-//	private int n;
-//	private double temperature;
-
 	public ChatRequest(String model, CategoryTitle categoryTitle) {
 		this.model = model;
 		String firstAnswer = "["
@@ -56,21 +53,32 @@ public class ChatRequest {
 		this.temperature = 0.5f;
 	}
 
-
 	public String addCategorySpecificMessage(CategoryTitle categoryTitle) {
 		switch (categoryTitle) {
 			case JAVA:
 				return "자바와 관련된 cs 면접 문제를 5개 만들어줘, 단 정답은 무조건 한개이어야 하고, 선택지는 4개이어야 해, JSON 형식으로 만들어줘";
-			case DATA_STRUCTURE:
-				return "자료구조와 관련된 cs 면접 문제를 5개 만들어줘, 단 정답은 무조건 한개이어야 하고, 선택지는 4개이어야 해, JSON 형식으로 만들어줘";
+			case LINUX:
+				return "리눅스와 관련된 cs 면접 문제를 5개 만들어줘, 단 정답은 무조건 한개이어야 하고, 선택지는 4개이어야 해, JSON 형식으로 만들어줘";
 			case DATABASE:
 				return "데이터베이스와 관련된 cs 면접 문제를 5개 만들어줘, 단 정답은 무조건 한개이어야 하고, 선택지는 4개이어야 해, JSON 형식으로 만들어줘";
 			case SPRING:
 				return "스프링 프레임워크와 관련된 cs 면접 문제를 5개 만들어줘, 단 정답은 무조건 한개이어야 하고, 선택지는 4개이어야 해, JSON 형식으로 만들어줘";
 			case NETWORK:
 				return "네트워크와 관련된 cs 면접 문제를 5개 만들어줘, 단 정답은 무조건 한개이어야 하고, 선택지는 4개이어야 해, JSON 형식으로 만들어줘";
-			case INTERVIEW:
+			case COMPUTER_SCIENCE:
 				return "컴퓨터 전공 과목과 관련된 cs 면접 문제를 5개 만들어줘, 단 정답은 무조건 한개이어야 하고, 선택지는 4개이어야 해, JSON 형식으로 만들어줘";
+			case DJANGO:
+				return "장고 프레임워크와 관련된 cs 면접 문제를 5개 만들어줘, 단 정답은 무조건 한개이어야 하고, 선택지는 4개이어야 해, JSON 형식으로 만들어줘";
+			case JPA:
+				return "JPA와 관련된 cs 면접 문제를 5개 만들어줘, 단 정답은 무조건 한개이어야 하고, 선택지는 4개이어야 해, JSON 형식으로 만들어줘";
+			case C:
+				return "C 프로그래밍 언어와 관련된 cs 면접 문제를 5개 만들어줘, 단 정답은 무조건 한개이어야 하고, 선택지는 4개이어야 해, JSON 형식으로 만들어줘";
+			case REACT:
+				return "리액트와 관련된 cs 면접 문제를 5개 만들어줘, 단 정답은 무조건 한개이어야 하고, 선택지는 4개이어야 해, JSON 형식으로 만들어줘";
+			case JAVASCRIPT:
+				return "자바스크립트와 관련된 cs 면접 문제를 5개 만들어줘, 단 정답은 무조건 한개이어야 하고, 선택지는 4개이어야 해, JSON 형식으로 만들어줘";
+			case PYTHON:
+				return "파이썬과 관련된 cs 면접 문제를 5개 만들어줘, 단 정답은 무조건 한개이어야 하고, 선택지는 4개이어야 해, JSON 형식으로 만들어줘";
 			default:
 				return "없는 카테고리";
 		}

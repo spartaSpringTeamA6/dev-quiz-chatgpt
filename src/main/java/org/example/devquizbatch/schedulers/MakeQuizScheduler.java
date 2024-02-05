@@ -7,6 +7,7 @@ import org.springframework.batch.core.JobExecutionException;
 import org.springframework.batch.core.JobParametersBuilder;
 import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
@@ -20,29 +21,55 @@ public class MakeQuizScheduler {
 	@Qualifier("makeJavaQuizJob")
 	private final Job makeJavaQuizJob;
 
-
-	@Qualifier("makeDataStructureQuizJob")
-	private final Job makeDataStructureQuizJob;
-
 	@Qualifier("makeDatabaseQuizJob")
 	private final Job makeDatabaseQuizJob;
-
 
 	@Qualifier("makeSpringQuizJob")
 	private final Job makeSpringQuizJob;
 
-
 	@Qualifier("makeNetworkQuizJob")
 	private final Job makeNetworkQuizJob;
 
+	@Qualifier("makeJavaScriptQuizJob")
+	private final Job makeJavaScriptQuizJob;
 
-	@Qualifier("makeInterviewQuizJob")
-	private final Job makeInterviewQuizJob;
+	@Qualifier("makePythonQuizJob")
+	private final Job makePythonQuizJob;
 
-	/**
-	 * 매일 오후 10시부터 25분마다 자바 문제를 생성하는 스케줄링 메서드입니다.
-	 */
-	//@Scheduled(cron = "0 1/25 13 * * *")
+	@Qualifier("makeCQuizJob")
+	private final Job makeCQuizJob;
+
+	@Qualifier("makeReactQuizJob")
+	private final Job makeReactQuizJob;
+
+	@Qualifier("makeLinuxQuizJob")
+	private final Job makeLinuxQuizJob;
+
+	@Qualifier("makeJPAQuizJob")
+	private final Job makeJPAQuizJob;
+
+	@Qualifier("makeDjangoQuizJob")
+	private final Job makeDjangoQuizJob;
+
+	@Qualifier("makeComputerScienceQuizJob")
+	private final Job makeComputerScienceQuizJob;
+
+	@Scheduled(cron = "0 1/15 20 * * *")
+	public void makeComputerScienceQuizJobSchedule() {
+		try {
+			jobLauncher.run(
+					makeComputerScienceQuizJob,
+					new JobParametersBuilder()
+							.addString("jobName", "makeComputerScienceQuizJob")
+							.addString("datetime", LocalDateTime.now().toString())
+							.toJobParameters()
+			);
+		} catch (JobExecutionException ex) {
+			log.error(ex.getMessage());
+			ex.printStackTrace();
+		}
+	}
+	@Scheduled(cron = "0 1/25 21 * * *")
 	public void makeJavaQuizJobSchedule() {
 		try {
 			jobLauncher.run(
@@ -50,37 +77,119 @@ public class MakeQuizScheduler {
 				new JobParametersBuilder()
 					.addString("jobName", "makeJavaQuizJob")
 					.addString("datetime", LocalDateTime.now().toString())
-					.toJobParameters()  // job parameter 설정
+					.toJobParameters()
 			);
 		} catch (JobExecutionException ex) {
 			log.error(ex.getMessage());
 			ex.printStackTrace();
 		}
 	}
-
-	/**
-	 * 매일 오후 11시부터 25분마다 자료구조 문제를 생성하는 스케줄링 메서드입니다.
-	 */
-	//@Scheduled(cron = "0 1/25 14 * * *")
-	public void makeDataStructureQuizJobSchedule() {
+	@Scheduled(cron = "0 1/15 22 * * *")
+	public void makeSpringQuizJobSchedule() {
 		try {
 			jobLauncher.run(
-				makeDataStructureQuizJob,
-				new JobParametersBuilder()
-					.addString("jobName", "makeDataStructureQuizJob")
-					.addString("datetime", LocalDateTime.now().toString())
-					.toJobParameters()  // job parameter 설정
+					makeSpringQuizJob,
+					new JobParametersBuilder()
+							.addString("jobName", "makeSpringQuizJob")
+							.addString("datetime", LocalDateTime.now().toString())
+							.toJobParameters()
 			);
 		} catch (JobExecutionException ex) {
 			log.error(ex.getMessage());
 			ex.printStackTrace();
 		}
 	}
-
-	/**
-	 * 매일 오후 12시부터 25분마다 데이터 베이스 문제를 생성하는 스케줄링 메서드입니다.
-	 */
-	//@Scheduled(cron = "0 1/25 15 * * *")
+	@Scheduled(cron = "0 1/25 23 * * *")
+	public void makePythonQuizJobSchedule() {
+		try {
+			jobLauncher.run(
+					makePythonQuizJob,
+					new JobParametersBuilder()
+							.addString("jobName", "makePythonQuizJob")
+							.addString("datetime", LocalDateTime.now().toString())
+							.toJobParameters()
+			);
+		} catch (JobExecutionException ex) {
+			log.error(ex.getMessage());
+			ex.printStackTrace();
+		}
+	}
+	@Scheduled(cron = "0 1/15 0 * * *")
+	public void makeDjangoQuizJobSchedule() {
+		try {
+			jobLauncher.run(
+					makeDjangoQuizJob,
+					new JobParametersBuilder()
+							.addString("jobName", "makeDjangoQuizJob")
+							.addString("datetime", LocalDateTime.now().toString())
+							.toJobParameters()
+			);
+		} catch (JobExecutionException ex) {
+			log.error(ex.getMessage());
+			ex.printStackTrace();
+		}
+	}
+	@Scheduled(cron = "0 1/25 1 * * *")
+	public void makeCQuizJobSchedule() {
+		try {
+			jobLauncher.run(
+					makeCQuizJob,
+					new JobParametersBuilder()
+							.addString("jobName", "makeCQuizJob")
+							.addString("datetime", LocalDateTime.now().toString())
+							.toJobParameters()
+			);
+		} catch (JobExecutionException ex) {
+			log.error(ex.getMessage());
+			ex.printStackTrace();
+		}
+	}
+	@Scheduled(cron = "0 1/15 2 * * *")
+	public void makeJavaScriptQuizJobSchedule() {
+		try {
+			jobLauncher.run(
+					makeJavaScriptQuizJob,
+					new JobParametersBuilder()
+							.addString("jobName", "makeJavaScriptQuizJob")
+							.addString("datetime", LocalDateTime.now().toString())
+							.toJobParameters()
+			);
+		} catch (JobExecutionException ex) {
+			log.error(ex.getMessage());
+			ex.printStackTrace();
+		}
+	}
+	@Scheduled(cron = "0 1/25 3 * * *")
+	public void makeReactQuizJobSchedule() {
+		try {
+			jobLauncher.run(
+					makeReactQuizJob,
+					new JobParametersBuilder()
+							.addString("jobName", "makeReactQuizJob")
+							.addString("datetime", LocalDateTime.now().toString())
+							.toJobParameters()
+			);
+		} catch (JobExecutionException ex) {
+			log.error(ex.getMessage());
+			ex.printStackTrace();
+		}
+	}
+	@Scheduled(cron = "0 1/15 4 * * *")
+	public void makeJPAQuizJobSchedule() {
+		try {
+			jobLauncher.run(
+					makeJPAQuizJob,
+					new JobParametersBuilder()
+							.addString("jobName", "makeJPAQuizJob")
+							.addString("datetime", LocalDateTime.now().toString())
+							.toJobParameters()
+			);
+		} catch (JobExecutionException ex) {
+			log.error(ex.getMessage());
+			ex.printStackTrace();
+		}
+	}
+	@Scheduled(cron = "0 1/25 5 * * *")
 	public void makeDatabaseQuizJobSchedule() {
 		try {
 			jobLauncher.run(
@@ -88,37 +197,14 @@ public class MakeQuizScheduler {
 				new JobParametersBuilder()
 					.addString("jobName", "makeDatabaseQuizJob")
 					.addString("datetime", LocalDateTime.now().toString())
-					.toJobParameters()  // job parameter 설정
+					.toJobParameters()
 			);
 		} catch (JobExecutionException ex) {
 			log.error(ex.getMessage());
 			ex.printStackTrace();
 		}
 	}
-
-	/**
-	 * 매일 오전  1시부터 15분마다 스프링 프레임워크 문제를 생성하는 스케줄링 메서드입니다.
-	 */
-	//@Scheduled(cron = "0 1/15 16 * * *")
-	public void makeSpringQuizJobSchedule() {
-		try {
-			jobLauncher.run(
-				makeSpringQuizJob,
-				new JobParametersBuilder()
-					.addString("jobName", "makeSpringQuizJob")
-					.addString("datetime", LocalDateTime.now().toString())
-					.toJobParameters()  // job parameter 설정
-			);
-		} catch (JobExecutionException ex) {
-			log.error(ex.getMessage());
-			ex.printStackTrace();
-		}
-	}
-
-	/**
-	 * 매일 오후전 2시부터 15분마다 네트워크 문제를 생성하는 스케줄링 메서드입니다.
-	 */
-	//@Scheduled(cron = "0 1/15 17 * * *")
+	@Scheduled(cron = "0 1/15 6 * * *")
 	public void makeNetworkQuizJobSchedule() {
 		try {
 			jobLauncher.run(
@@ -126,32 +212,26 @@ public class MakeQuizScheduler {
 				new JobParametersBuilder()
 					.addString("jobName", "makeNetworkQuizJob")
 					.addString("datetime", LocalDateTime.now().toString())
-					.toJobParameters()  // job parameter 설정
+					.toJobParameters()
 			);
 		} catch (JobExecutionException ex) {
 			log.error(ex.getMessage());
 			ex.printStackTrace();
 		}
 	}
-
-	/**
-	 * 매일 오전 3시부터 15분마다 cs 면접 문제를 생성하는 스케줄링 메서드입니다.
-	 */
-	//@Scheduled(cron = "0 1/15 18 * * *")
-	public void makeInterviewQuizJobSchedule() {
+	@Scheduled(cron = "0 1/15 7 * * *")
+	public void makeLinuxQuizJobSchedule() {
 		try {
 			jobLauncher.run(
-				makeInterviewQuizJob,
-				new JobParametersBuilder()
-					.addString("jobName", "makeInterviewQuizJob")
-					.addString("datetime", LocalDateTime.now().toString())
-					.toJobParameters()  // job parameter 설정
+					makeLinuxQuizJob,
+					new JobParametersBuilder()
+							.addString("jobName", "makeLinuxQuizJob")
+							.addString("datetime", LocalDateTime.now().toString())
+							.toJobParameters()
 			);
 		} catch (JobExecutionException ex) {
 			log.error(ex.getMessage());
 			ex.printStackTrace();
 		}
 	}
-
-
 }

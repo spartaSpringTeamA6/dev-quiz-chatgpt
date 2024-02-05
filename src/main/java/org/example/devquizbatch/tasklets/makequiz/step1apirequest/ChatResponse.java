@@ -15,8 +15,6 @@ public class ChatResponse {
 
 	private List<Choice> choices;
 
-	// constructors, getters and setters
-
 	@AllArgsConstructor
 	@NoArgsConstructor
 	@Getter
@@ -26,6 +24,5 @@ public class ChatResponse {
 		private int index;
 		private Message message;
 
-		// constructors, getters and setters
 	}
 }

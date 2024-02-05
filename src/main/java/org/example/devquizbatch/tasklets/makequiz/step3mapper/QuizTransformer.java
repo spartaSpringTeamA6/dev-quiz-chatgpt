@@ -11,13 +11,6 @@ import java.util.stream.Collectors;
 
 public class QuizTransformer {
 
-	/**
-	 * 퀴즈 DTO 목록을 퀴즈로 변환합니다.
-	 *
-	 * @param quizDtoFromResponses 퀴즈 DTO 목록
-	 * @param category             카테고리
-	 * @return 퀴즈 목록
-	 */
 	public static List<Quiz> toQuizzes(final List<QuizDtoFromResponse> quizDtoFromResponses,
 									   final Category category) {
 		return quizDtoFromResponses.stream()
@@ -47,6 +40,7 @@ public class QuizTransformer {
 		final QuizDtoFromResponse.Choice choice) {
 		return QuizChoice.builder()
 			.choiceContent(choice.getContent())
+			.choiceSequence(sequence+1)
 			.isAnswer(choice.isAnswer())
 			.build();
 	}

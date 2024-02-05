@@ -20,7 +20,6 @@ public class CategoryMapperTasklet implements Tasklet {
 
 	private final CategoryRepository categoryRepository;
 
-
 	@Override
 	public RepeatStatus execute(StepContribution stepContribution, ChunkContext chunkContext)
 		throws Exception {
@@ -31,6 +30,4 @@ public class CategoryMapperTasklet implements Tasklet {
 		QuizQueue.add(quizzes);
 		return RepeatStatus.FINISHED;
 	}
-
-
 }

@@ -1,7 +1,7 @@
 package org.example.devquizbatch.config;
 
 import lombok.RequiredArgsConstructor;
-import org.example.devquizbatch.tasklets.saverdbms.step1save.SaveQuizAtRDBMSTasklet;
+import org.example.devquizbatch.tasklets.saverdbms.SaveQuizAtRDBMSTasklet;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
@@ -20,11 +20,6 @@ public class SaveQuizAtRDBMSConfig {
 
 	private final SaveQuizAtRDBMSTasklet saveQuizAtRDBMSTasklet;
 
-	/**
-	 * RDBMS에 Quiz를 저장하는 Batch Job을 생성합니다.
-	 *
-	 * @return RDBMS에 Quiz 저장 Job
-	 */
 	@Bean(name = "saveQuizAtRDBMSJob")
 	public Job saveQuizAtRDBMSJob() {
 		return jobBuilderFactory.get("saveQuizAtRDBMSJob")

@@ -25,16 +25,12 @@ public class MakeDatabaseQuizConfig extends MakeQuizJobFlow {
 	private final Step converterFromResponseStep;
 	private final Step categoryMapperStep;
 
-	/**
-	 * Database Quiz 생성 작업을 수행하는 Batch Job을 생성합니다.
-	 *
-	 * @return Database Quiz 생성 Job
-	 */
 	@Bean(name = "makeDatabaseQuizJob")
 	public Job makeDatabaseQuizJob() {
 		return makeQuizFlow(jobBuilderFactory, apiDatabaseRequestStep(),
 			converterFromResponseStep,
-			categoryMapperStep, CategoryTitle.DATABASE);
+			categoryMapperStep,
+			CategoryTitle.DATABASE);
 	}
 
 	@Bean(name = "apiDatabaseRequestStep")

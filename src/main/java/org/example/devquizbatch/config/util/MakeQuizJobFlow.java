@@ -8,7 +8,6 @@ import org.springframework.batch.core.configuration.annotation.JobBuilderFactory
 
 public class MakeQuizJobFlow {
 
-
 	public Job makeQuizFlow(JobBuilderFactory jobBuilderFactory, Step apiRequestStep,
 		Step converterFromResponseStep, Step categoryMapperStep, CategoryTitle categoryTitle) {
 		return jobBuilderFactory.get(getJobName(categoryTitle))
@@ -28,19 +27,30 @@ public class MakeQuizJobFlow {
 		switch (categoryTitle) {
 			case JAVA:
 				return "makeJavaQuizJob";
-			case DATA_STRUCTURE:
-				return "makeDataStructureQuizJob";
+			case PYTHON:
+				return "makePythonQuizJob";
 			case DATABASE:
 				return "makeDatabaseQuizJob";
 			case SPRING:
 				return "makeSpringQuizJob";
 			case NETWORK:
 				return "makeNetworkQuizJob";
-			case INTERVIEW:
-				return "makeInterviewQuizJob";
+			case COMPUTER_SCIENCE:
+				return "makeComputerScienceQuizJob";
+			case DJANGO:
+				return "makeDjangoQuizJob";
+			case JPA:
+				return "makeJpaQuizJob";
+			case LINUX:
+				return "makeLinuxQuizJob";
+			case C:
+				return "makeCQuizJob";
+			case REACT:
+				return "makeReactQuizJob";
+			case JAVASCRIPT:
+				return "makeJavascriptQuizJob";
 			default:
 				return "emptyCategory";
 		}
-
 	}
 }

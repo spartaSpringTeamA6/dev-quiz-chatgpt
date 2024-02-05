@@ -27,11 +27,6 @@ public class MakeNetworkQuizConfig extends MakeQuizJobFlow {
 	private final Step converterFromResponseStep;
 	private final Step categoryMapperStep;
 
-	/**
-	 * Network Quiz 생성 작업을 수행하는 Batch Job을 생성합니다.
-	 *
-	 * @return Network Quiz 생성 Job
-	 */
 	@Bean(name = "makeNetworkQuizJob")
 	public Job makeNetworkQuizJob() {
 		return makeQuizFlow(jobBuilderFactory, apiNetworkRequestStep(),

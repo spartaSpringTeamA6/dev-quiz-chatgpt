@@ -47,7 +47,6 @@ public class QuizChoice {
 
 	public void setQuiz(Quiz quiz) {
 		this.quiz = quiz;
-//		quiz.addChoice(this);
 	}
 
 

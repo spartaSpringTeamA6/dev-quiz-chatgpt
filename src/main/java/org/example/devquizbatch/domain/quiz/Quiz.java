@@ -36,9 +36,6 @@ public class Quiz extends BaseTimeEntity {
 	@Column(nullable = false, name = "quiz_title")
 	private String quizTitle;
 
-//	@Column(nullable = true)
-//	@Enumerated(EnumType.STRING)
-//	private Difficulty difficulty;
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "category_id")

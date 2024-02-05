@@ -25,11 +25,6 @@ public class MakeJavaQuizConfig extends MakeQuizJobFlow {
 	private final Step converterFromResponseStep;
 	private final Step categoryMapperStep;
 
-	/**
-	 * Java Quiz 생성 작업을 수행하는 Batch Job을 생성합니다.
-	 *
-	 * @return Java Quiz 생성 Job
-	 */
 	@Bean(name = "makeJavaQuizJob")
 	public Job makeJavaQuizJob() {
 		return makeQuizFlow(jobBuilderFactory, apiJavaRequestStep(),

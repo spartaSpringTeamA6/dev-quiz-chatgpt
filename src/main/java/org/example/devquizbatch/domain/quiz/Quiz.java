@@ -19,6 +19,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,13 +37,27 @@ public class Quiz extends BaseTimeEntity {
 	@Column(nullable = false, name = "quiz_title")
 	private String quizTitle;
 
-
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "category_id")
 	private Category category;
 
 	@OneToMany(mappedBy = "quiz", fetch = FetchType.EAGER, cascade = CascadeType.PERSIST, orphanRemoval = true)
 	private List<QuizChoice> quizChoices = new ArrayList<>();
+
+	@Column(nullable = false)
+	private Long correctCount = 0L;
+
+	@Column(nullable = false)
+	private Long failCount = 0L;
+
+	@Column(nullable = false)
+	private Long solveCount = 0L;
+
+	@Column(nullable = false)
+	private boolean isDeleted = false;
+
+	@Column
+	private LocalDateTime deletedAt;
 
 	@Builder
 	public Quiz(String quizTitle) {

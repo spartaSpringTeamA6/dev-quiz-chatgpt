@@ -2,18 +2,18 @@ package org.example.devquizbatch.tasklets.makequiz.step1apirequest;
 
 public enum CategoryTitle {
 
-	JAVA("java"),
-	DATABASE("database"),
-	SPRING("spring"),
-	NETWORK("network"),
-	PYTHON("python"),
-	COMPUTER_SCIENCE("computerscience"),
-	DJANGO("django"),
-	JPA("jpa"),
-	LINUX("linux"),
-	C("c"),
-	REACT("react"),
-	JAVASCRIPT("javascript");
+	JAVA("JAVA"),
+	DATABASE("DATABASE"),
+	SPRING("SPRING"),
+	NETWORK("NETWORK"),
+	PYTHON("PYTHON"),
+	COMPUTER_SCIENCE("COMPUTER_SCIENCE"),
+	DJANGO("DJANGO"),
+	JPA("JPA"),
+	LINUX("LINUX"),
+	C("C"),
+	REACT("REACT"),
+	JAVASCRIPT("JAVASCRIPT");
 
 	private final String categoryTitle;
 

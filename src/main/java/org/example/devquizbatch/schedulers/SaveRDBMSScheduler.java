@@ -22,7 +22,7 @@ public class SaveRDBMSScheduler {
 	@Qualifier("saveQuizAtRDBMSJob")
 	private final Job saveQuizAtRDBMSJob;
 
-	@Scheduled(cron = "0 0 8 * * *")
+	@Scheduled(cron = "0 30 8 * * *")
 
 	public void saveQuizAtRDBMSJobSchedule() {
 		try {

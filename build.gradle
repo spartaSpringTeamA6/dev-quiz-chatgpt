@@ -65,9 +65,9 @@ java {
     sourceCompatibility = JavaVersion.VERSION_11
 }
 
-test {
-    useJUnitPlatform()
-}
+//test {
+//    useJUnitPlatform()
+//}
 
 clean {
     delete file('src/main/generated')

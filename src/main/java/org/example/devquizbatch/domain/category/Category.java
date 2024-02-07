@@ -51,5 +51,6 @@ public class Category extends BaseTimeEntity {
 			this.categoryDescription = categoryDescription;
 		}
 	}
+	//
 
 }
